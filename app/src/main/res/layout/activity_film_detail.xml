@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.FilmDetailActivity">
+
+    <ImageView
+        android:id="@+id/iv_poster"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        tools:src="@tools:sample/avatars[0]"
+        app:layout_constraintStart_toStartOf="@id/guideline_margin_start"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_film_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        tools:text="Film name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_poster"
+        app:layout_constraintEnd_toEndOf="@id/guideline_margin_end"
+        app:layout_constraintTop_toTopOf="@id/iv_poster"/>
+
+    <TextView
+        android:id="@+id/tv_vote_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/vote"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_film_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_film_name"/>
+
+    <TextView
+        android:id="@+id/tv_vote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        tools:text="6.0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_vote_text"
+        app:layout_constraintTop_toTopOf="@id/tv_vote_text"
+        app:layout_constraintBottom_toBottomOf="@id/tv_vote_text"/>
+
+    <TextView
+        android:id="@+id/tv_popularity_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/popularity"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_film_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_vote"/>
+
+    <TextView
+        android:id="@+id/tv_popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        tools:text="6.0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_popularity_text"
+        app:layout_constraintTop_toTopOf="@id/tv_popularity_text"
+        app:layout_constraintBottom_toBottomOf="@id/tv_popularity_text"/>
+
+    <TextView
+        android:id="@+id/tv_release_date_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/release_date"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_film_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_popularity"/>
+
+    <TextView
+        android:id="@+id/tv_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        tools:text="01.01.2020"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_release_date_text"
+        app:layout_constraintBottom_toBottomOf="@id/tv_release_date_text"/>
+
+    <TextView
+        android:id="@+id/tv_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/description"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline_margin_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_margin_end"
+        app:layout_constraintTop_toBottomOf="@id/iv_poster"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        tools:text="Описание"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_margin_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_margin_end"
+        app:layout_constraintTop_toBottomOf="@id/tv_description_text"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_margin_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_margin_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
