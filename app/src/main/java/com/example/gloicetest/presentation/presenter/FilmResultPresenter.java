@@ -26,9 +26,13 @@ public class FilmResultPresenter extends MvpPresenter<FilmResultView> {
                     public void onResponse(Call<PopularFilmResponse> call, @NotNull Response<PopularFilmResponse> response) {
                         getViewState().hideLoading();
 
-                        PopularFilmResponse popularFilm = response.body();
-                        if (popularFilm != null)
-                            getViewState().setFilmResult(popularFilm.getTotalPages(), popularFilm.getResults());
+                        if (response.isSuccessful()) {
+                            PopularFilmResponse popularFilm = response.body();
+                            if (popularFilm != null)
+                                getViewState().setFilmResult(popularFilm.getTotalPages(), popularFilm.getResults());
+                        }else{
+                            getViewState().showError(response.toString());
+                        }
                     }
 
                     @Override
